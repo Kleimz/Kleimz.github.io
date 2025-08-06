@@ -1,0 +1,213 @@
+body {
+  font-family: sans-serif;
+  padding: 2rem;
+  background-color: #555;
+  color: #333;
+
+  margin: 0;
+  padding-bottom: 100px;
+}
+
+
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 60px;
+}
+
+.project {
+  display: flex; /* Use flex layout */
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  border-radius: 1px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  max-width: 800px; /* Increased to allow more space for scale-up */
+  min-height: 120px;
+  gap: 1rem;
+  position: relative;
+  margin-left: 25%;
+}
+
+.text-content {
+  flex: 1; /* Takes up available space */
+}
+
+.thumbnail {
+  width: 100px;
+  transition: transform 0.3s ease;
+  transform-origin: right center;
+}
+
+.title {
+  transition: font-size 0.3s ease;
+  margin: 0.5rem 0;
+  transform-origin: left center;
+  color: white
+}
+
+.details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.project:hover .thumbnail {
+  transform: scale(2);
+}
+.project:hover .title{
+  font-size: 2rem;
+}
+
+.project:hover .details {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.about {
+  max-width: 500px; 
+  word-wrap: break-word;
+  color: white;
+} 
+h2{
+  max-width: 600px;
+  word-wrap: break-word;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.header-div {
+  position: fixed;
+  top: 0;
+  left: 0;
+ 
+  width: 100vw;
+  background: #333;
+  color: #f1f1f1;
+  padding: 10px 16px;
+  z-index: 1000;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  margin: 0;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.nav a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-left: 12px;
+  
+  font-size: 1rem;
+
+}
+.nav a:last-child{
+  margin-right: 36px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.info-section {
+  background: #333;
+  border-radius: 1px;
+  padding: 1rem;
+  color: white;
+  max-width: 800px;
+  margin-left: 25%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.about-image {
+  max-width: 50%;
+  height: auto;
+  align-self: center;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+
+.footer-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: #333;
+  color: #f1f1f1;
+  padding: 10px 16px;
+  z-index: 1000;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+}
+
+.footer-bar a {
+  color: #f1f1f1;
+  text-decoration: none;
+  margin-left: 12px;
+}
+
+.footer-bar a:hover {
+  text-decoration: underline;
+}
+
+#chaser {
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  background-image: url('Thumbnails/ducky_2_spritesheet.png');
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.05s linear; /* smooth facing flip */
+}
+#duck{
+ margin-left: auto;
+ margin-right: 40px;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .project {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .thumbnail {
+    align-self: center;
+    transform-origin: center;
+  }
+
+  .about {
+    max-width: 100%; /* let it fill available width on small screens */
+  }
+  
+ 
+}
